@@ -58,33 +58,63 @@
     </nav>
         <div class="container" id="mainBody" data-animation="flip-in-x" data-delay=".7s" style="animation-delay: 0.5s">
             <div class="row">
-                 <div class="col-sm">             
-                    <div id="triangles">
-                        <p class="calcHead"> Input the measurements of your triangle and what calculation you'd like done.</p>
-                        <br>
-                        <input type="text" id="num1" placeholder="first Measurement"><br>
-                        <br>
-                        <input type="text" id="num2" placeholder="Second measurement"><br>
-                        <br>
-                        <input type="text" id="num3" placeholder="Third measurement"><br>
-                        <br>
-                        <!-- <img src="images/tri.png"> -->
-
-                        <select id="operator">
-                            <option value="area">area</option>
-                            <option value="ThirdEdge"> Third Edge </option>
-                            <option value="RightTri"> Check if right triangle </option>
-                            <option value="*"> * </option>
-                            <option value="/"> / </option>
-                        </select>
-                        <br>
-                        <br>
-                        <button id="triCalc"  onclick="TRIcalculate();">Calculate</button>
-                        <input type="text" id="result">
+                 <div class="col-sm">  
+                        <div class="col-sm">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="images/tri.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Triangle Calculator</h5>
+                                    <p class="calcHead"> Input the measurements of your triangle and what calculation you'd like done.</p>
+                                    <br>
+                                    <input type="text" id="num1" placeholder="first Measurement"><br>
+                                    <br>
+                                    <input type="text" id="num2" placeholder="Second measurement"><br>
+                                    <br>
+                                    <input type="text" id="num3" placeholder="Third measurement"><br>
+                                    <br>
+                                    <select id="operator">
+                                        <option value="area">area</option>
+                                        <option value="ThirdEdge"> Third Edge </option>
+                                        <option value="RightTri"> Check if right triangle </option>
+                                        <option value="*"> * </option>
+                                        <option value="/"> / </option>
+                                    </select>
+                                    <br>
+                                    <br>
+                                    <button id="triCalc"  onclick="TRIcalculate();">Calculate</button>
+                                    <input type="text" id="result">                          
+                                </div>
+                            </div>          
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+                                    
+
+
+
+                                    <!-- <div id="triangles">
+                                        <p class="calcHead"> Input the measurements of your triangle and what calculation you'd like done.</p>
+                                        <br>
+                                        <input type="text" id="num1" placeholder="first Measurement"><br>
+                                        <br>
+                                        <input type="text" id="num2" placeholder="Second measurement"><br>
+                                        <br>
+                                        <input type="text" id="num3" placeholder="Third measurement"><br>
+                                        <br>
+                                        <img src="images/tri.png">
+                                        <select id="operator">
+                                            <option value="area">area</option>
+                                            <option value="ThirdEdge"> Third Edge </option>
+                                            <option value="RightTri"> Check if right triangle </option>
+                                            <option value="*"> * </option>
+                                            <option value="/"> / </option>
+                                        </select>
+                                        <br>
+                                        <br>
+                                        <button id="triCalc"  onclick="TRIcalculate();">Calculate</button>
+                                        <input type="text" id="result"> -->
+                  
 
 
 
