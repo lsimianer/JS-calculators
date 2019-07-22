@@ -58,39 +58,85 @@
     </nav>
         <div class="container" id="mainBody" data-animation="flip-in-x" data-delay=".7s" style="animation-delay: 0.5s">
             <div class="row">
-                 <div class="col-sm">  
-                        <div class="col-sm">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="images/tri.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Triangle Calculator</h5>
-                                    <p class="calcHead"> Input the measurements of your triangle and what calculation you'd like done.</p>
-                                    <br>
-                                    <input type="text" id="num1" placeholder="first Measurement"><br>
-                                    <br>
-                                    <input type="text" id="num2" placeholder="Second measurement"><br>
-                                    <br>
-                                    <input type="text" id="num3" placeholder="Third measurement"><br>
-                                    <br>
-                                    <select id="operator">
-                                        <option value="area">area</option>
-                                        <option value="ThirdEdge"> Third Edge </option>
-                                        <option value="RightTri"> Check if right triangle </option>
-                                        <option value="*"> * </option>
-                                        <option value="/"> / </option>
-                                    </select>
-                                    <br>
-                                    <br>
-                                    <button id="triCalc"  onclick="TRIcalculate();">Calculate</button>
-                                    <input type="text" id="result">                          
-                                </div>
-                            </div>          
+                <div class="col-sm">  
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/tri.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Triangle Calculator</h5>
+                            <p class="calcHead"> Input the measurements of your triangle and what calculation you'd like done.</p>
+                            <br>
+                            <input type="text" id="num1" placeholder="first Measurement"><br>
+                            <br>
+                            <input type="text" id="num2" placeholder="Second measurement"><br>
+                            <br>
+                            <input type="text" id="num3" placeholder="Third measurement"><br>
+                            <br>
+                            <select id="operator">
+                                <option value="area">area</option>
+                                <option value="ThirdEdge"> Third Edge </option>
+                                <option value="RightTri"> Check if right triangle </option>
+                                <!-- <option value="*"> * </option>
+                                <option value="/"> / </option> -->
+                            </select>
+                            <br>
+                            <br>
+                            <button id="triCalc"  onclick="TRIcalculate();">Calculate</button>
+                            <input type="text" id="result">                          
                         </div>
-                    </div>
+                    </div>         
                 </div>
+                <div class="col-sm">  
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/house.png " alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Mortgage Calculator</h5>
+                            <p class="calcHead"> Input the values of your Mortgage.</p>
+                            <br>
+                            <input type="text" id="FinancedAMT" placeholder="Financed Amount"><br>
+                            <br>
+                            <input type="text" id="interestRate" placeholder="Interest Rate"><br>
+                            <br>
+                            <input type="text" id="termYears" placeholder="Term Years"><br>
+                            <br>
+                            
+                            <br>
+                            <br>
+                            <button id="mortgagebtn"  onclick="mortgageCalc();">Calculate</button>
+                            <input type="text" id="result1"placeholder="Monthly Payment" >    
+                            <input type="text" id="result2" placeholder="Total Cost" >                          
+                      
+                        </div>
+                    </div>         
+                </div>
+                <!-- end card div -->
             </div>
+        </div>
                                     
+<script>
+ var term;
+    var apr;
+    var amt;
+    var mPmt;
+    //use toFixed(2) to set the precision of the mPayment. Use it on an int.
+    function getValues()
+    {
+      term = document.getElementById("trm").value;
+      apr = document.getElementById("apr").value;
+      amt = document.getElementById("amt").value;
+      apr /= 1200;
+      term *= 12;
+      mPmt = calculatePayment();
+      document.getElementById("pmt").value = "$" + mPmt.toFixed(2);
+    };
+    
+    function calculatePayment()
+    {
+        var payment = amt*(apr * Math.pow((1 + apr), term))/(Math.pow((1 + apr), term) - 1);
+        return payment;
+    }
 
+
+</script>
 
 
                                     <!-- <div id="triangles">

@@ -17,9 +17,6 @@ function TRIcalculate(){
 
         }
 
-
-
-
     if( operator === "area"){
 
         document.getElementById('result').value = ((N1*N2)/2);
@@ -51,7 +48,35 @@ function TRIcalculate(){
         console.log("calculating edge");
     };
     
-
-
 };
+    // mortgage calc
 
+    //n1 = number of payments
+    //n2 = interest
+    //n3 = term
+
+    // years * 12 = N
+    //(interest / 100) /12 = I
+
+    var term;
+    var apr;
+    var amt;
+    var mPmt;
+    
+    function mortgageCalc(){
+        event.preventDefault();
+            var amt = parseInt(document.getElementById("FinancedAMT").value);
+            var apr = parseInt(document.getElementById("interestRate").value);
+            var term = parseInt(document.getElementById('termYears').value);
+
+            apr /= 1200;
+            term *=12;
+            document.getElementById("result1").value ="$" + payment;
+
+            var payment = amt*(apr * Math.pow((1+apr), term))/ (Math.pow((1+apr),term) -1);
+            var totalCost = payment * term;
+            document.getElementById('result1').value = '$' + payment.toFixed(2);
+            document.getElementById('result2').value = '$' + totalCost.toFixed(2)
+
+    };
+  
